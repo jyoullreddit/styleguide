@@ -839,9 +839,11 @@
       , aTime;
 
     // good
-    var once,
-        upon,
-        aTime;
+    var once = [
+      'upon',
+      'a',
+      'time'
+    ]
 
     // bad
     var hero = {
