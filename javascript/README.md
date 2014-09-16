@@ -778,7 +778,7 @@
     // good
     (function(global) {
       // ...stuff...
-    })(this);
+    })(this);↵
     ```
 
     ```javascript
@@ -786,6 +786,7 @@
     (function(global) {
       // ...stuff...
     })(this);
+    ```
 
     ```javascript
     // bad
