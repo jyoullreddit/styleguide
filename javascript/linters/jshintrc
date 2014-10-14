@@ -13,9 +13,6 @@
   // Define globals exposed by Node.js.
   "node": true,
 
-  // Ignore warnings about semicolons.
-  "asi": true,
-
   /*
    * ENFORCING OPTIONS
    * =================
