@@ -588,6 +588,21 @@
     }
     ```
 
+  - Place `else` on the same line as your curly braces.
+  
+    ```javascript
+    // bad
+    if (test) {
+    }
+    else {
+    }
+
+    // good
+    if (test) {
+    } else {
+    }
+    ```
+
   - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
 
 **[⬆ back to top](#table-of-contents)**
