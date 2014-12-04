@@ -595,7 +595,7 @@
 
 ## Blocks
 
-  - Use braces with all multi-line blocks. Single-line functions are okay if short. Do not use single-line conditionals.
+  - Use braces with all multi-line blocks. Single-line functions are okay if short. Single-line equality conditionals are okay if short.
 
     ```javascript
     // bad
@@ -604,6 +604,9 @@
 
     // bad
     if (test) return false;
+
+    // good
+    if (!test) { return; }
 
     // good
     if (test) {
