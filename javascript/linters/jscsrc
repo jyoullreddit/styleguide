@@ -15,7 +15,7 @@
   },
   "requireParenthesesAroundIIFE": true,
   "requireDotNotation": true,
-  "disallowMultipleVarDecl": true,
+  "disallowMultipleVarDecl": false,
   "requireCurlyBraces": [
     "if",
     "else",
