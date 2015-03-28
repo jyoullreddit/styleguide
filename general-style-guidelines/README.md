@@ -61,8 +61,17 @@ Prefixing the commit message summary with the subsystem being affected
 can be helpful sometimes, e.g. `/dev/api: Document subreddit endpoints.`.
 
 It's a good idea to include the rationale for a change in the explanatory
-text for non-trivial changes.  When in doubt, think about what would be
-useful three years down the line when blaming a weird line of code.
+text for non-trivial changes:
+
+> This is why commit messages are important - they explain *why* the
+code was changed. Hence the code review process is not just about
+the code - the reviewers need to understand why the code
+is being changed and the process that led to the
+change being proposed. The commit history is going to be the only
+record of why this code exists in 10 years time, so the explanation
+needs to be correct.
+
+More info: <https://lwn.net/Articles/637896/>.
 
 ### Use verbose, topical branches.
 
