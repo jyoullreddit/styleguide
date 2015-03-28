@@ -73,19 +73,6 @@ needs to be correct.
 
 More info: <https://lwn.net/Articles/637896/>.
 
-### Use verbose, topical branches.
-
-```
-# bad:
-$ git checkout -b fix-js-bug
-
-# good:
-$ git checkout -b fix-js-error-on-expanding-image-galleries
-```
-
-Similarily, use verbose, topical commits. Stick to 80 characters, and add
-verbose commit messages if necessary. Use capitalization and punctuation.
-
 ### Make sure changes are rebased on latest master.
 
 Ensure your code is up-to-date to prevent merge conflicts and make testing
