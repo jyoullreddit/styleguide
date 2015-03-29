@@ -619,7 +619,7 @@
 
 ## Blocks
 
-  - Use bracess. Single-line functions are okay if short. Single-line conditionals are okay if short.
+  - Use braces. Single-line functions are okay if short. Single-line conditionals are okay if short.
 
     ```javascript
     // bad
