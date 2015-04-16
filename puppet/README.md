@@ -17,6 +17,16 @@ Instead of
 just always use double quotes (`"`)
 
 
+### cron
+
+For cron resources, both the `hour` and `minute` variables must always be
+explicitly stated.  If you intend to unrestrict for that interval, use
+`absent`.
+
+The goal of this is to reduce the incidence of cron resources accidentally
+getting `*` for hour / minute intervals unintentionally.
+
+
 ## puppetlint
 
 The following puppet-lint command should validate our rules:
