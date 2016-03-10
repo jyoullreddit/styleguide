@@ -8,15 +8,6 @@ We follow the standard puppet style guidelines
 
 with only minor modifications
 
-### Quoting
-
-Instead of
-
-> All strings must be enclosed in single quotes, unless they contain variables or single quotes.
-
-just always use double quotes (`"`)
-
-
 ### cron
 
 For cron resources, both the `hour` and `minute` variables must always be
