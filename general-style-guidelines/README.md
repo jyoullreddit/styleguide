@@ -77,3 +77,16 @@ More info: <https://lwn.net/Articles/637896/>.
 
 Ensure your code is up-to-date to prevent merge conflicts and make testing
 easier.
+
+### gitignore
+
+In general, a project's gitignore should ignore files that are related to that
+project. For example, a Python project might put `*.pyc` in its gitignore.
+
+Things that are specific to your development environment (like vim's `*.swo`,
+or IDE-specific directories, or `.DS_Store` on OS X) should be added to your
+[personal global gitignore]. This makes it so all your projects ignore that
+file and projects don't need to have an explosion of every different
+environment's ignores.
+
+[personal global gitignore]: https://help.github.com/articles/ignoring-files/#create-a-global-gitignore
