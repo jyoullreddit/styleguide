@@ -1,4 +1,4 @@
-# reddit General Style Guidelines
+# Reddit General Style Guidelines
 
 Check out the [reddit/reddit wiki](https://github.com/reddit/reddit/wiki) for
 additional resources.
@@ -10,7 +10,7 @@ correct than it is to be *absolutely* correct.
 
 ## "Reddit"
 
-reddit is always lowercase, even at the start of sentences. Many headings and messages around the site are stylistically lowercased as well.
+Reddit should be uppercase.
 
 ## Git workflow
 
