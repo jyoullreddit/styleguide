@@ -57,6 +57,9 @@ Further paragraphs come after blank lines.
 
 ```
 
+A more in-depth explanation of good commit messages is written up here:
+<https://chris.beams.io/posts/git-commit>.
+
 Prefixing the commit message summary with the subsystem being affected
 can be helpful sometimes, e.g. `/dev/api: Document subreddit endpoints.`.
 
