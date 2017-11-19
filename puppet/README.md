@@ -17,6 +17,31 @@ explicitly stated.  If you intend to unrestrict for that interval, use
 The goal of this is to reduce the incidence of cron resources accidentally
 getting `*` for hour / minute intervals unintentionally.
 
+### templates
+
+[Don't use lookup functions in templates](https://puppet.com/docs/hiera/3.3/puppet.html#dont-use-the-lookup-functions-from-templates)
+if it can be avoided. Variables in templates should be sourced from the
+manifest calling the template.
+
+Example:
+
+init.pp
+```puppet
+$host = hiera('harold::host')
+file { '/etc/foo':
+  contents => template('myclass/template.erb'),
+}
+```
+
+template.erb
+```erb
+Good:
+Host=<%= @host %>
+
+Bad:
+Host=<%= scope.function_hiera(['harold::host'])
+```
+
 
 ## puppetlint
 
