@@ -12,8 +12,8 @@ See [AWS Accounts](https://reddit.atlassian.net/wiki/spaces/IO/pages/120940398/A
 
 ## Terraform version
 We all use the same major version of Terraform, knowing we will need to update to the next major release in sync with each other, and with the Drone CI that checks Terraform code.
-* The current major release is `0.10.0`
-* Terraform developers should be running at least 0.10.0, and from time to time will be required to update to a newer minor version when a template deployed with a newer version is encountered.
+* The current major release is `0.11.0`
+* Terraform developers should be running at least 0.11.0, and from time to time will be required to update to a newer minor version when a template deployed with a newer version is encountered.
 
 ## Code style and structure
 We require running `terraform fmt` to control general structure of terraform templates. [(1)](#1).
@@ -52,12 +52,12 @@ Additionally, we observe these local conventions:
 * **Pin the current major Terraform release** in main.tf using [pessimistic constraints](https://www.terraform.io/docs/configuration/terraform.html#specifying-a-required-terraform-version)
     ```
     terraform {
-      required_version = "~> 0.10.4"
+      required_version = "~> 0.11"
     }
     ```
-    * If you need a more recent minor version than .0, use that instead (e.g. replace 0.10.0 with 0.10.8).
+    * If you need a more recent minor version than .0, use that instead (e.g. replace 0.11.0 with 0.11.1).
     * If you validated and deployed the code using a more recent minor version, pin that code to the version you are actually running. [(3)](#3)
-    * Our current major version is 0.10. Blueprints should utilize ~> 0.10.0, or a more recent minor version (0.10.x) as appropriate.
+    * Our current major version is 0.11. Blueprints should utilize ~> 0.11.0, or a more recent minor version (0.11.x) as appropriate.
 
 * **Use account, region, and provider version** in main.tf using [pessimistic constraints](https://www.terraform.io/docs/configuration/terraform.html#specifying-a-required-terraform-version) for the version [(4)](#4)
     ```
