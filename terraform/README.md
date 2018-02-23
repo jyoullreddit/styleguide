@@ -103,6 +103,30 @@ Additionally, we observe these local conventions:
         ...
     }
     ```
+    
+* **All templated files must end with their formatting type and a `.tmpl` suffix**
+    * This:<br>
+    ```
+    data template_file graphite_hostname {
+      # File has a .yaml.tmpl suffix since its a yaml templated file 
+      template = "${file("${path.module}/cloud-config/hostname.yaml.tmpl")}"
+
+      vars {
+        hosttype = "graphite"
+      }
+    }
+    ```
+    * Not this:<br>
+    ```
+    data template_file graphite_hostname {
+      template = "${file("${path.module}/cloud-config/hostname.yaml")}"
+
+      vars {
+        hosttype = "graphite"
+      }
+    }
+    ```
+    
 
 * **AWS IAM / access policies are written in Terraform code**, not inline JSON
     * We prefer Terraform code so that we can use comments inline, and so that we write will be rendered in up-to-date AWS JSON.
