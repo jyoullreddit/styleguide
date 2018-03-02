@@ -103,12 +103,12 @@ Additionally, we observe these local conventions:
         ...
     }
     ```
-    
+
 * **All templated files must end with their formatting type and a `.tmpl` suffix**
     * This:<br>
     ```
     data template_file graphite_hostname {
-      # File has a .yaml.tmpl suffix since its a yaml templated file 
+      # File has a .yaml.tmpl suffix since its a yaml templated file
       template = "${file("${path.module}/cloud-config/hostname.yaml.tmpl")}"
 
       vars {
@@ -135,6 +135,11 @@ Additionally, we observe these local conventions:
 
 * **AWS IAM / access policies are written in Terraform code**, not inline JSON
     * We prefer Terraform code so that we can use comments inline, and so that we write will be rendered in up-to-date AWS JSON.
+
+* **Locals are used for constants within a blueprint or a module** where as **Variables are used to pass data into modules**
+    * Since, locals are global to a terraform directory, there may only be one local with the same name in a directory.
+    * There are no other patterns to where locals can be defined. We want to wait until our usage of locals matures before we decide on these.
+    * See [this example for usage](https://github.com/reddit/reddit-terraform/blob/5516d023175f25d2fa0aefb1653bedc7fea0ddba/blueprints/EXAMPLE/locals.tf#L1-L9).
 
 
 ## Repo layout
