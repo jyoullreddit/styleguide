@@ -126,7 +126,12 @@ Additionally, we observe these local conventions:
       }
     }
     ```
-    
+
+* **Where it makes sense, the terraform statefile `.tfstate` should live in S3**
+    *  This allows us to avoid worrying about committing  statefile changes. There have been several incidents where un-committed statefile changes resulted in problems for the next person interacting with that blueprint.
+    * The exception to this rule are blueprints that often require manual statefile maintenance using methods such as `terraform state rm`, `terraform state mv`, and `terraform import`. These blueprints may opt to keep their statefile committed to this repo.
+
+    However, once a service's statefile is stable and no longer requires routine manual maintenance, it should be moved to S3 when convenient.
 
 * **AWS IAM / access policies are written in Terraform code**, not inline JSON
     * We prefer Terraform code so that we can use comments inline, and so that we write will be rendered in up-to-date AWS JSON.
