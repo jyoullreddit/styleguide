@@ -132,6 +132,7 @@ Additionally, we observe these local conventions:
     * The exception to this rule are blueprints that often require manual statefile maintenance using methods such as `terraform state rm`, `terraform state mv`, and `terraform import`. These blueprints may opt to keep their statefile committed to this repo.
 
     However, once a service's statefile is stable and no longer requires routine manual maintenance, it should be moved to S3 when convenient.
+    * See [this example for usage](https://github.com/reddit/reddit-terraform/blob/5516d023175f25d2fa0aefb1653bedc7fea0ddba/blueprints/EXAMPLE/main.tf#L10-L21)
 
 * **AWS IAM / access policies are written in Terraform code**, not inline JSON
     * We prefer Terraform code so that we can use comments inline, and so that we write will be rendered in up-to-date AWS JSON.
