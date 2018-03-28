@@ -1,5 +1,13 @@
 # reddit Helm styleguide
 
+## Chart naming
+
+First, read through upstream Helm's [General Conventions - Chart Names](https://docs.helm.sh/chart_best_practices/#general-conventions) for general naming conventions. After that: 
+
+If you are writing a Chart for a Reddit-authored system, the Chart name should match the GitHub repo name. For example, our chart for [reddit-service-deliveryman](https://github.com/reddit/reddit-service-deliveryman) is named [reddit-service-deliveryman](https://github.com/reddit/reddit-helm-charts/tree/master/charts/reddit-service-deliveryman).
+
+If you are writing a Chart for a third-party system, while following the Helm General Conventions on Chart Names, try to choose a name that most closely matches the system's full name. For example, "Anchore Engine" would be `anchore-engine`.
+
 ## Chart Requirements (for dependencies)
 
 Helm has a built-in notion of [Chart Requirements](https://docs.helm.sh/chart_best_practices/#requirements-files). For example, if my service needs a cache to operate, my Chart might optionally require the memcached Chart. If I make the requirement optional, we can do things like swap in an ElastiCache instance instead of running the cache in-cluster (this may be desirable in production).
