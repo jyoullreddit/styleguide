@@ -130,6 +130,7 @@ Additionally, we observe these local conventions:
 * **Where it makes sense, the terraform statefile `.tfstate` should live in S3**
     *  This allows us to avoid worrying about committing  statefile changes. There have been several incidents where un-committed statefile changes resulted in problems for the next person interacting with that blueprint.
     * The exception to this rule are blueprints that often require manual statefile maintenance using methods such as `terraform state rm`, `terraform state mv`, and `terraform import`. These blueprints may opt to keep their statefile committed to this repo.
+    * The statefile S3 key prefix should match blueprint's path. While this marries the structure of the repo to the location of the statefile, it is the most obvious location for the statefile for a blueprint to be present. For example, the `blueprints/prod-ue1/messenger` blueprint stores its state in S3 at the path `blueprints/prod-ue1/messenger/terraform.tfstate"
 
     However, once a service's statefile is stable and no longer requires routine manual maintenance, it should be moved to S3 when convenient.
     * See [this example for usage](https://github.com/reddit/reddit-terraform/blob/5516d023175f25d2fa0aefb1653bedc7fea0ddba/blueprints/EXAMPLE/main.tf#L10-L21)
