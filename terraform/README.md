@@ -212,6 +212,10 @@ Shared modules are an exception to the per-account-and-region directory structur
             ...
     ```
 
+## Elastic Container Registries (ECR) module
+* To keep things organized ECR repositories in [this file](https://github.com/reddit/reddit-terraform/blob/master/blueprints/builder/ecr.tf) should be listed in alphabetical order. 
+* Denote deviations from the standard push/pull ARNs. Add a comment explaining the reason for the deviation.
+
 ## S3 buckets
 * Terraform files for S3 buckets that are cleanly owned and more or less exclusively used by one service (that is defined in Terraform) can be co-located with other templates for the service.
 * Terraform files for S3 buckets that are shared between services or that do not have one clear owner that is defined in terraform, should be collected in the `blueprints/ACCOUNT_SHORTNAME-SHORT_REGION/s3/` of the account that owns the bucket. Work in progress to capture existing S3 assets in Terraform will begin by storing the buckets' .tf files in `blueprints/ACCOUNT_SHORTNAME-SHORT_REGION/s3/`.
